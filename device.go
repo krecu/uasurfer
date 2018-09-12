@@ -12,6 +12,13 @@ func (u *UserAgent) evalDevice(ua string) {
 			u.DeviceType = DeviceTablet // windows rt, linux haxor tablets
 			return
 		}
+
+		if strings.Contains(ua, "dtv") ||
+			strings.Contains(ua, "smarttv") {
+			u.DeviceType = DeviceTV
+			return
+		}
+
 		u.DeviceType = DeviceComputer
 
 	case u.OS.Platform == PlatformiPad || u.OS.Platform == PlatformiPod || strings.Contains(ua, "tablet") || strings.Contains(ua, "kindle/") || strings.Contains(ua, "playbook"):
@@ -25,14 +32,29 @@ func (u *UserAgent) evalDevice(ua string) {
 		u.DeviceType = DeviceTV
 
 	case u.OS.Name == OSAndroid:
-		// android phones report as "mobile", android tablets should not but often do -- http://android-developers.blogspot.com/2010/12/android-browser-user-agent-issues.html
-		if strings.Contains(ua, "mobile") {
-			u.DeviceType = DevicePhone
+
+		if strings.Contains(ua, "rkm mk") {
+			u.DeviceType = DeviceTV
 			return
 		}
 
-		if strings.Contains(ua, "tablet") || strings.Contains(ua, "nexus 7") || strings.Contains(ua, "nexus 9") || strings.Contains(ua, "nexus 10") || strings.Contains(ua, "xoom") {
+		if strings.Contains(ua, "tablet") ||
+			strings.Contains(ua, "transformer") ||
+			strings.Contains(ua, "sm-t") ||
+			strings.Contains(ua, "sm-p") ||
+			strings.Contains(ua, "gt-p") ||
+			strings.Contains(ua, "gt-n") ||
+			strings.Contains(ua, "nexus 7") ||
+			strings.Contains(ua, "nexus 9") ||
+			strings.Contains(ua, "nexus 10") ||
+			strings.Contains(ua, "xoom") {
 			u.DeviceType = DeviceTablet
+			return
+		}
+
+		// android phones report as "mobile", android tablets should not but often do -- http://android-developers.blogspot.com/2010/12/android-browser-user-agent-issues.html
+		if strings.Contains(ua, "mobile") {
+			u.DeviceType = DevicePhone
 			return
 		}
 
