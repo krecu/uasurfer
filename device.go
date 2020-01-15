@@ -29,9 +29,11 @@ func (u *UserAgent) evalDevice(ua string) {
 
 	// long list of smarttv and tv dongle identifiers
 	case
-			strings.Contains(ua, "crkey") ||
+		strings.Contains(ua, "crkey") ||
 			strings.Contains(ua, "googletv") ||
 			strings.Contains(ua, "aftb") ||
+			strings.Contains(ua, "aftt") ||
+			strings.Contains(ua, "aftm") ||
 			strings.Contains(ua, "adt-") ||
 			strings.Contains(ua, "roku") ||
 			strings.Contains(ua, "viera") ||
@@ -55,15 +57,19 @@ func (u *UserAgent) evalDevice(ua string) {
 		}
 
 		if strings.Contains(ua, "tablet") ||
+			strings.Contains(ua, "nexus 7") ||
+			strings.Contains(ua, "nexus 9") ||
+			strings.Contains(ua, "nexus 10") ||
+			strings.Contains(ua, "xoom") ||
 			strings.Contains(ua, "transformer") ||
 			strings.Contains(ua, "sm-t") ||
 			strings.Contains(ua, "sm-p") ||
 			strings.Contains(ua, "gt-p") ||
 			strings.Contains(ua, "gt-n") ||
-			strings.Contains(ua, "nexus 7") ||
-			strings.Contains(ua, "nexus 9") ||
-			strings.Contains(ua, "nexus 10") ||
-			strings.Contains(ua, "xoom") {
+			strings.Contains(ua, "sm-t") ||
+			strings.Contains(ua, "; kf") ||
+			strings.Contains(ua, "; t1") ||
+			strings.Contains(ua, "lenovo tab") {
 			u.DeviceType = DeviceTablet
 			return
 		}

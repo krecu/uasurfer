@@ -31,6 +31,10 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserSafari, Version{8, 0, 0}}, OS{PlatformiPhone, OSiOS, Version{8, 0, 2}}, DevicePhone}},
 
+	{"Mozilla/5.0 (iPhone10,3; CPU iPhone OS 8_0_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A405 Safari/600.1.4",
+		UserAgent{
+			Browser{BrowserSafari, Version{8, 0, 0}}, OS{PlatformiPhone, OSiOS, Version{8, 0, 2}}, DevicePhone}},
+
 	// iPad
 	{"Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10",
 		UserAgent{
@@ -131,6 +135,26 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (Windows NT 6.3; Trident/7.0; .NET4.0E; .NET4.0C; rv:11.0) like Gecko",
 		UserAgent{
 			Browser{BrowserIE, Version{11, 0, 0}}, OS{PlatformWindows, OSWindows, Version{6, 3, 0}}, DeviceComputer}},
+
+    {"Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 EdgiOS/44.3.5 Mobile/15E148 Safari/605.1.15",
+		UserAgent{
+			Browser{BrowserIE, Version{12, 0, 0}}, OS{PlatformiPhone, OSiOS, Version{12, 3, 1}}, DevicePhone}},
+
+	{"Mozilla/5.0 (iPad; CPU OS 12_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 EdgiOS/44.3.2 Mobile/15E148 Safari/605.1.15",
+		UserAgent{
+			Browser{BrowserIE, Version{12, 0, 0}}, OS{PlatformiPad, OSiOS, Version{12, 3, 1}}, DeviceTablet}},
+
+	{"Mozilla/5.0 (Linux; Android 9; motorola one) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.90 Mobile Safari/537.36 EdgA/42.0.2.3728",
+		UserAgent{
+			Browser{BrowserIE, Version{42, 0, 2}}, OS{PlatformLinux, OSAndroid, Version{9, 0, 0}}, DevicePhone}},
+
+	{"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3800.0 Safari/537.36 Edg/76.0.172.0",
+		UserAgent{
+			Browser{BrowserIE, Version{76, 0, 172}}, OS{PlatformWindows, OSWindows, Version{10, 0, 0}}, DeviceComputer}},
+
+	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3803.0 Safari/537.36 Edg/76.0.176.0",
+		UserAgent{
+			Browser{BrowserIE, Version{76, 0, 176}}, OS{PlatformMac, OSMacOSX, Version{10, 14, 5}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; DEVICE INFO) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.123",
 		UserAgent{
@@ -269,7 +293,7 @@ var testUAVars = []struct {
 
 	{"Mozilla/5.0 (Nintendo WiiU) AppleWebKit/534.52 (KHTML, like Gecko) NX/2.1.0.8.21 NintendoBrowser/1.0.0.7494.US",
 		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformNintendo, OSNintendo, Version{0, 0, 0}}, DeviceConsole}},
+			Browser{BrowserNintendo, Version{0, 0, 0}}, OS{PlatformNintendo, OSNintendo, Version{0, 0, 0}}, DeviceConsole}},
 
 	// Xbox
 	{"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; Xbox)", //Xbox 360
@@ -320,7 +344,7 @@ var testUAVars = []struct {
 
 	{"mozilla/5.0 (smart-tv; linux; tizen 2.3) applewebkit/538.1 (khtml, like gecko) samsungbrowser/1.0 tv safari/538.1", // Samsung SmartTV
 		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformLinux, OSLinux, Version{0, 0, 0}}, DeviceTV}},
+			Browser{BrowserSamsung, Version{0, 0, 0}}, OS{PlatformLinux, OSLinux, Version{0, 0, 0}}, DeviceTV}},
 
 	{"mozilla/5.0 (linux; u) applewebkit/537.36 (khtml, like gecko) version/4.0 mobile safari/537.36 smarttv/6.0 (netcast)",
 		UserAgent{
@@ -340,6 +364,16 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserSpotify, Version{1, 0, 9}}, OS{PlatformMac, OSMacOSX, Version{10, 10, 2}}, DeviceComputer}},
 
+	// OCSP fetchers
+	{"Microsoft-CryptoAPI/10.0",
+		UserAgent{
+			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformWindows, OSUnknown, Version{0, 0, 0}}, DeviceComputer}},
+	{"trustd (unknown version) CFNetwork/811.7.2 Darwin/16.7.0 (x86_64)",
+		UserAgent{
+			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformMac, OSUnknown, Version{0, 0, 0}}, DeviceComputer}},
+	{"ocspd (unknown version) CFNetwork/520.5.3 Darwin/11.4.2 (x86_64)(MacBookAir5%2C2)",
+		UserAgent{
+			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformMac, OSUnknown, Version{0, 0, 0}}, DeviceComputer}},
 	// Bots
 	{"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1; +http://www.apple.com/go/applebot)",
 		UserAgent{
@@ -393,8 +427,13 @@ var testUAVars = []struct {
 		UserAgent{
 			Browser{BrowserYahooBot, Version{0, 0, 0}}, OS{PlatformBot, OSBot, Version{0, 0, 0}}, DeviceComputer}},
 
-	// {"Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
-	// 	BrowserBot, Version{0,0,0}}, OS{PlatformBot, OSBot, Version{6,0,0}}, DeviceComputer}},
+	{"{UA:Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)}, ua: &{Browser:{Name:BrowserGoogleBot Version:{Major:0 Minor:0 Patch:0}} OS:{Platform:PlatformBot Name:OSBot Version:{Major:6 Minor:0 Patch:1}} DeviceType:DeviceComputer}",
+		UserAgent{
+			Browser{BrowserGoogleBot, Version{0, 0, 0}}, OS{PlatformBot, OSBot, Version{6, 0, 1}}, DeviceComputer}},
+
+	{"Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+		UserAgent{
+			Browser{BrowserGoogleBot, Version{0, 0, 0}}, OS{PlatformBot, OSBot, Version{6, 0, 0}}, DeviceComputer}},
 
 	{"mozilla/5.0 (unknown; linux x86_64) applewebkit/538.1 (khtml, like gecko) phantomjs/2.1.1 safari/538.1",
 		UserAgent{
@@ -422,13 +461,17 @@ var testUAVars = []struct {
 			Browser{BrowserOpera, Version{10, 0, 0}}, OS{PlatformUnknown, OSUnknown, Version{0, 0, 0}}, DevicePhone}},
 
 	// BrowserQQ
-	// {"Mozilla/5.0 (Windows NT 6.2; WOW64; Trident/7.0; Touch; .NET4.0E; .NET4.0C; .NET CLR 3.5.30729; .NET CLR 2.0.50727; .NET CLR 3.0.30729; InfoPath.3; Tablet PC 2.0; QQBrowser/7.6.21433.400; rv:11.0) like Gecko",
-	// 	UserAgent{
-	//		Browser{BrowserQQ, Version{7,0,0}}, OS{PlatformWindows, OSWindows, Version{8,0,0}}, DeviceTablet}},
+	{"Mozilla/5.0 (Windows NT 6.2; WOW64; Trident/7.0; Touch; .NET4.0E; .NET4.0C; .NET CLR 3.5.30729; .NET CLR 2.0.50727; .NET CLR 3.0.30729; InfoPath.3; Tablet PC 2.0; QQBrowser/7.6.21433.400; rv:11.0) like Gecko",
+		UserAgent{
+			Browser{BrowserQQ, Version{7, 6, 21433}}, OS{PlatformWindows, OSWindows, Version{6, 2, 0}}, DeviceTablet}},
 
-	// {"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36 QQBrowser/9.0.2191.400",
-	// 	UserAgent{
-	//		Browser{BrowserQQ, Version{9,0,0}}, OS{PlatformWindows, OSWindows, Version{7,0,0}}, DeviceComputer}},
+	{"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36 QQBrowser/9.0.2191.400",
+		UserAgent{
+			Browser{BrowserQQ, Version{9, 0, 2191}}, OS{PlatformWindows, OSWindows, Version{6, 1, 0}}, DeviceComputer}},
+
+	{"mozilla/5.0 (iphone; cpu iphone os 8_1_2 like mac os x) applewebkit/600.1.4 (khtml, like gecko) mobile/12b440 qq/5.3.0.319 nettype/wifi mem/205",
+		UserAgent{
+			Browser{BrowserQQ, Version{5, 3, 0}}, OS{PlatformiPhone, OSiOS, Version{8, 1, 2}}, DevicePhone}},
 
 	// ANDROID TESTS
 
@@ -791,11 +834,11 @@ var testUAVars = []struct {
 
 	{"Mozilla/5.0 (Nintendo WiiU) AppleWebKit/534.52 (KHTML, like Gecko) NX/2.1.0.8.21 NintendoBrowser/1.0.0.7494.US",
 		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformNintendo, OSNintendo, Version{0, 0, 0}}, DeviceConsole}},
+			Browser{BrowserNintendo, Version{0, 0, 0}}, OS{PlatformNintendo, OSNintendo, Version{0, 0, 0}}, DeviceConsole}},
 
 	{"Mozilla/5.0 (Nintendo WiiU) AppleWebKit/536.28 (KHTML, like Gecko) NX/3.0.3.12.6 NintendoBrowser/2.0.0.9362.US",
 		UserAgent{
-			Browser{BrowserUnknown, Version{0, 0, 0}}, OS{PlatformNintendo, OSNintendo, Version{0, 0, 0}}, DeviceConsole}},
+			Browser{BrowserNintendo, Version{0, 0, 0}}, OS{PlatformNintendo, OSNintendo, Version{0, 0, 0}}, DeviceConsole}},
 
 	// TODO fails to get opera first -- but is this a real UA string or an uncommon spoof?
 	// {"Mozilla/4.0 (compatible; MSIE 5.0; Windows 2000) Opera 6.0 [en]",
@@ -819,7 +862,7 @@ var testUAVars = []struct {
 
 	{"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) YaBrowser/1.0.1084.5402 Chrome/19.0.1084.5402 Safari/536.5",
 		UserAgent{
-			Browser{BrowserChrome, Version{19, 0, 1084}}, OS{PlatformWindows, OSWindows, Version{6, 2, 0}}, DeviceComputer}},
+			Browser{BrowserYandex, Version{1, 0, 1084}}, OS{PlatformWindows, OSWindows, Version{6, 2, 0}}, DeviceComputer}},
 
 	{"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.15 (KHTML, like Gecko) Chrome/24.0.1295.0 Safari/537.15",
 		UserAgent{
@@ -913,6 +956,25 @@ var testUAVars = []struct {
 	{"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; Xbox)",
 		UserAgent{
 			Browser{BrowserIE, Version{9, 0, 0}}, OS{PlatformXbox, OSXbox, Version{6, 1, 0}}, DeviceConsole}},
+	{"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/42.0 CoRom/36.0.1985.144 Chrome/36.0.1985.144 Safari/537.36",
+		UserAgent{
+			Browser{BrowserCocCoc, Version{42, 0, 0}}, OS{PlatformWindows, OSWindows, Version{6, 3, 0}}, DeviceComputer}},
+	{"Mozilla/5.0 (compatible; coccocbot/1.0; +http://help.coccoc.com/searchengine)",
+		UserAgent{
+			Browser{BrowserCocCocBot, Version{0, 0, 0}}, OS{PlatformBot, OSBot, Version{0, 0, 0}}, DeviceComputer}},
+
+	{"Mozilla/5.0 (Linux; Android 4.4.4; SM-T560 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Safari/537.36",
+		UserAgent{
+			Browser{BrowserChrome, Version{63, 0, 3239}}, OS{PlatformLinux, OSAndroid, Version{4, 4, 4}}, DeviceTablet}},
+	{"Mozilla/5.0 (Linux; Android 5.1.1; KFSUWI) AppleWebKit/537.36 (KHTML, like Gecko) Silk/70.4.2 like Chrome/70.0.3538.80 Safari/537.36",
+		UserAgent{
+			Browser{BrowserSilk, Version{70, 4, 2}}, OS{PlatformLinux, OSAndroid, Version{5, 1, 1}}, DeviceTablet}},
+	{"Mozilla/5.0 (Linux; Android 4.4.2; T1-701u Build/HuaweiMediaPad) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.123 Safari/537.36",
+		UserAgent{
+			Browser{BrowserChrome, Version{64, 0, 3282}}, OS{PlatformLinux, OSAndroid, Version{4, 4, 2}}, DeviceTablet}},
+	{"Mozilla/5.0 (Linux; Android 4.4.2; Lenovo TAB 2 A7-30F Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.84 Safari/537.36",
+		UserAgent{
+			Browser{BrowserChrome, Version{45, 0, 2454}}, OS{PlatformLinux, OSAndroid, Version{4, 4, 2}}, DeviceTablet}},
 }
 
 func TestAgentSurfer(t *testing.T) {
@@ -1060,5 +1122,38 @@ func BenchmarkParseSafariiPad(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		Parse("Mozilla/5.0 (iPad; CPU OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B440 Safari/600.1.4")
+	}
+}
+
+func TestStringTrimPrefix(t *testing.T) {
+	testCases := []struct {
+		f        func() string
+		expected string
+	}{
+		{
+			f:        DeviceUnknown.StringTrimPrefix,
+			expected: "Unknown",
+		},
+		{
+			f:        BrowserUnknown.StringTrimPrefix,
+			expected: "Unknown",
+		},
+		{
+			f:        OSUnknown.StringTrimPrefix,
+			expected: "Unknown",
+		},
+		{
+			f:        PlatformUnknown.StringTrimPrefix,
+			expected: "Unknown",
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run("", func(t *testing.T) {
+			s := tc.f()
+			if tc.expected != s {
+				t.Fatalf("Expected %q, got %q", tc.expected, s)
+			}
+		})
 	}
 }
