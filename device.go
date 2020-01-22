@@ -40,7 +40,9 @@ func (u *UserAgent) evalDevice(ua string) {
 			strings.Contains(ua, "aquos") ||
 			strings.Contains(ua, "dtv") ||
 			strings.Contains(ua, "appletv") ||
+			strings.Contains(ua, "apple tv") ||
 			strings.Contains(ua, "smarttv") ||
+			strings.Contains(ua, "smart tv") ||
 			strings.Contains(ua, "tuner") ||
 			strings.Contains(ua, "smart-tv") ||
 			strings.Contains(ua, "stb") ||
